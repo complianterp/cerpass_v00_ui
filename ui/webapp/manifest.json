@@ -39,10 +39,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -72,12 +69,13 @@
 					"bundleName": "cerpass.ui.i18n.i18n"
 				}
 			},
-			"MenuService": {
+			"": {
 				"uri": "/odata/v2/MenuService/",
 				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {
 					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneWay",
+					"defaultBindingMode": "Default",
+					"useBatch": false,
 					"defaultCountMode": "Request"
 				},
 				"dataSource": "MenuService",
@@ -85,11 +83,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -101,15 +97,11 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "RouteMenuFrame",
-					"pattern": "RouteMenuFrame",
-					"target": [
-						"TargetMenuFrame"
-					]
-				}
-			],
+			"routes": [{
+				"name": "TargetMenuFrame",
+				"pattern": "RouteMenuFrame",
+				"target": ["TargetMenuFrame"]
+			}],
 			"targets": {
 				"TargetMenuFrame": {
 					"viewType": "XML",

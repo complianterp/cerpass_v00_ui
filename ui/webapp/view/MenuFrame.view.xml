@@ -2,8 +2,12 @@
 	displayBlock="true" xmlns="sap.m">
 	<App id="idAppControl">
 		<pages>
-			<Page title="{i18n>title}">
-				<content></content>
+			<Page title="{i18n>title}" binding="{/MainMenu}">
+				<content>
+					<List items="{/MainMenu}">
+						<StandardListItem type="Active" press="handleListItemPress" title="{title}"/>
+					</List>
+				</content>
 			</Page>
 		</pages>
 	</App>
