@@ -51,7 +51,14 @@ sap.ui.define([
 			} else {
 				toggleButton.setTooltip('Collapse Navigation');
 			}
-		}		
+		},
+		onItemSelect : function(oEvent) {
+			var item = oEvent.getParameter('item');
+			var viewId = this.getView().getId();
+			sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey())
+			//var oScrollContainer = sap.ui.getCore().byId('sc1');
+			//oScrollContainer.addContent(viewId);
+		}
 
 	});
 });

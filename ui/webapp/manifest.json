@@ -101,13 +101,41 @@
 				"name": "TargetMenuFrame",
 				"pattern": "RouteMenuFrame",
 				"target": ["TargetMenuFrame"]
-			}],
+			}, {
+				"pattern": "module",
+				"name": "toModule",
+				"target": ["module"]
+			}, {
+				"pattern": "tileMasterData",
+				"name": "toTileMasterData",
+				"target": ["tileMasterData"]				
+			}
+			],
 			"targets": {
 				"TargetMenuFrame": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
-					"viewName": "MenuFrame"
+					"viewName": "MenuFrame",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "cerpass.ui.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl"
+				},
+				"module": {
+					"viewType": "XML",
+					"viewName": "module",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "cerpass.ui.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"tileMasterData": {
+					"viewType": "XML",
+					"viewName": "tileMasterData"
 				}
 			}
 		}
