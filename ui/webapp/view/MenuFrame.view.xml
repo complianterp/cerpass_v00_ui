@@ -37,27 +37,7 @@
 			</tnt:SideNavigation>
 		</tnt:sideContent>
 		<tnt:mainContents>
-			<NavContainer id="pageContainer">
-				<pages>
-					<ScrollContainer id="dashboard"
-									 horizontal="false"
-									 vertical="true"
-									 height="100%">
-						<Text text="This is the root page"></Text>
-					</ScrollContainer>
-					<ScrollContainer id="module"
-									 horizontal="false"
-									 vertical="true"
-									 height="100%">
-						<Text text="This is the first page"></Text>
-					</ScrollContainer>					
-					<ScrollContainer id="sc1"
-									 horizontal="false"
-									 vertical="true"
-									 height="100%">
-					</ScrollContainer>					
-				</pages>
-			</NavContainer>
+			<App id="mainContents"/>
 		</tnt:mainContents>
 	</tnt:ToolPage>
 </mvc:View>

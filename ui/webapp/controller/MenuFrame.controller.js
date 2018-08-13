@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	'sap/m/Popover',
-	'sap/m/Button'
-], function (Controller, Popover, Button) {
+	'sap/m/Button',
+	'sap/m/MessageToast'
+], function (Controller, Popover, Button, MessageToast) {
 	"use strict";
 
 	return Controller.extend("cerpass.ui.controller.MenuFrame", {
@@ -53,11 +54,35 @@ sap.ui.define([
 			}
 		},
 		onItemSelect : function(oEvent) {
-			var item = oEvent.getParameter('item');
-			var viewId = this.getView().getId();
-			sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey())
+			//var item = oEvent.getParameter('item');
+			//var viewId = this.getView().getId();
+			//sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey())
 			//var oScrollContainer = sap.ui.getCore().byId('sc1');
 			//oScrollContainer.addContent(viewId);
+
+			var oItem = oEvent.getParameter('item');
+			var sKey = oItem.getKey();
+			// if you click on home, settings or statistics button, call the navTo function
+			if ((sKey === "home" || sKey === "tileMasterData" || sKey === "module")) {
+				// if the device is phone, collaps the navigation side of the app to give more space
+				//if (Device.system.phone) {
+				//	this.onSideNavButtonPress();
+				//}
+				this.getRouter().navTo(sKey);
+			} else {
+				MessageToast.show(sKey);
+			}
+		},
+
+		getRouter : function () {
+			return sap.ui.core.UIComponent.getRouterFor(this);
+		},
+		
+		onSideNavButtonPress: function() {
+			var oToolPage = this.byId("app");
+			var bSideExpanded = oToolPage.getSideExpanded();
+			this._setToggleButtonTooltip(bSideExpanded);
+			oToolPage.setSideExpanded(!oToolPage.getSideExpanded());
 		}
 
 	});

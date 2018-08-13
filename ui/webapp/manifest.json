@@ -90,12 +90,11 @@
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
+				"controlId": "mainContents",
 				"viewType": "XML",
-				"async": true,
-				"viewPath": "cerpass.ui.view",
 				"controlAggregation": "pages",
-				"controlId": "idAppControl",
-				"clearControlAggregation": false
+				"viewPath": "cerpass.ui.view",
+				"async": true
 			},
 			"routes": [{
 				"name": "TargetMenuFrame",
@@ -103,11 +102,11 @@
 				"target": ["TargetMenuFrame"]
 			}, {
 				"pattern": "module",
-				"name": "toModule",
+				"name": "module",
 				"target": ["module"]
 			}, {
 				"pattern": "tileMasterData",
-				"name": "toTileMasterData",
+				"name": "tileMasterData",
 				"target": ["tileMasterData"]				
 			}
 			],
@@ -125,13 +124,7 @@
 				},
 				"module": {
 					"viewType": "XML",
-					"viewName": "module",
-					"routerClass": "sap.m.routing.Router",
-					"async": true,
-					"viewPath": "cerpass.ui.view",
-					"controlAggregation": "pages",
-					"controlId": "idAppControl",
-					"clearControlAggregation": false
+					"viewName": "module"
 				},
 				"tileMasterData": {
 					"viewType": "XML",
