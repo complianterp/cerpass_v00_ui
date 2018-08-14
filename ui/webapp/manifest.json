@@ -39,7 +39,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -83,9 +86,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -96,19 +101,35 @@
 				"viewPath": "cerpass.ui.view",
 				"async": true
 			},
-			"routes": [{
-				"name": "TargetMenuFrame",
-				"pattern": "RouteMenuFrame",
-				"target": ["TargetMenuFrame"]
-			}, {
-				"pattern": "module",
-				"name": "module",
-				"target": ["module"]
-			}, {
-				"pattern": "tileMasterData",
-				"name": "tileMasterData",
-				"target": ["tileMasterData"]				
-			}
+			"routes": [
+				{
+					"name": "TargetMenuFrame",
+					"pattern": "RouteMenuFrame",
+					"target": [
+						"TargetMenuFrame"
+					]
+				},
+				{
+					"pattern": "module",
+					"name": "module",
+					"target": [
+						"module"
+					]
+				},
+				{
+					"pattern": "tileMasterData",
+					"name": "tileMasterData",
+					"target": [
+						"tileMasterData"
+					]
+				},
+				{
+					"pattern": "activities",
+					"name": "activities",
+					"target": [
+						"activities"
+					]
+				}				
 			],
 			"targets": {
 				"TargetMenuFrame": {
@@ -124,11 +145,25 @@
 				},
 				"module": {
 					"viewType": "XML",
-					"viewName": "module"
+					"viewName": "pages.masterdata.module",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewPath": "cerpass.ui.view",
+					"async": true
 				},
 				"tileMasterData": {
 					"viewType": "XML",
-					"viewName": "tileMasterData"
+					"viewName": "tileMasterData",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewPath": "cerpass.ui.view",
+					"async": true
+				},
+				"activities": {
+					"viewType": "XML",
+					"viewName": "pages.masterdata.activities"
 				}
 			}
 		}
