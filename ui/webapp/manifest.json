@@ -99,7 +99,10 @@
 				"viewType": "XML",
 				"controlAggregation": "pages",
 				"viewPath": "cerpass.ui.view",
-				"async": true
+				"async": true,
+				"bypassed": {
+					"target": "notFound"
+				}
 			},
 			"routes": [
 				{
@@ -129,7 +132,7 @@
 					"target": [
 						"activities"
 					]
-				}				
+				}
 			],
 			"targets": {
 				"TargetMenuFrame": {
@@ -154,7 +157,7 @@
 				},
 				"tileMasterData": {
 					"viewType": "XML",
-					"viewName": "tileMasterData",
+					"viewName": "pages.tileMasterData",
 					"routerClass": "sap.m.routing.Router",
 					"controlId": "mainContents",
 					"controlAggregation": "pages",
@@ -163,7 +166,17 @@
 				},
 				"activities": {
 					"viewType": "XML",
-					"viewName": "pages.masterdata.activities"
+					"viewName": "pages.masterdata.activities",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewPath": "cerpass.ui.view",
+					"async": true
+				},
+				"notFound": {
+					"viewType": "XML",
+					"viewName": "notFound",
+					"transition": "show"
 				}
 			}
 		}

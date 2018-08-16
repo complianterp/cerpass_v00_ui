@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("cerpass.ui.controller.tileMasterData", {
+	return Controller.extend("cerpass.ui.controller.pages.tileMasterData", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
