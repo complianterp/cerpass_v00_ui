@@ -76,13 +76,6 @@ sap.ui.define([
 
 		getRouter : function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);
-		},
-		
-		onSideNavButtonPress: function() {
-			var oToolPage = this.byId("app");
-			var bSideExpanded = oToolPage.getSideExpanded();
-			this._setToggleButtonTooltip(bSideExpanded);
-			oToolPage.setSideExpanded(!oToolPage.getSideExpanded());
 		}
 
 	});

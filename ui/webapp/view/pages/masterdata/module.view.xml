@@ -3,9 +3,6 @@
 		<pages>
 			<Page title="Module">
 				<content>
-					
-				<ToggleButton text="Button" width="100px" id="button0"/>
-					
 				</content>
 			</Page>
 		</pages>
