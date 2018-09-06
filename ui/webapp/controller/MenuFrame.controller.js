@@ -2,14 +2,24 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	'sap/m/Popover',
 	'sap/m/Button',
+	'sap/ui/model/Filter',
+	'sap/ui/model/FilterOperator',
 	'sap/m/MessageToast'
-], function (Controller, Popover, Button, MessageToast) {
+], function (Controller, Popover, Button, Filter, FilterOperator, MessageToast) {
 	"use strict";
 
 	return Controller.extend("cerpass.ui.controller.MenuFrame", {
 
 		onInit : function() {
 			this._setToggleButtonTooltip(!sap.ui.Device.system.desktop);
+			
+			//Filter
+			//var aFilter = [];
+			//var sQuery = "dyn";
+			//aFilter.push(new Filter("location", FilterOperator.Equals, sQuery));
+			//var oList = this.getView().byID("main");
+			//var oBinding = oList.getBinding("items");
+			//oBinding.filter(aFilter);
 		},
 
 		onUserNamePress: function (event) {
